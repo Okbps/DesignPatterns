@@ -1,4 +1,4 @@
-package com;
+package com.ch01Strategy;
 
 import com.ch01Strategy.ducks.Duck;
 import com.ch01Strategy.ducks.MallardDuck;
