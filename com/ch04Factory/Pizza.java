@@ -1,5 +1,7 @@
 package com.ch04Factory;
 
+import com.ch04Factory.ingridients.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,16 +9,16 @@ import java.util.List;
  * Created by Aspire on 30.04.2017.
  */
 public abstract class Pizza {
-    String name, dough, sauce;
-    List<String> toppings = new ArrayList<String>();
+    String name;
+    Dough dough;
+    Sauce sauce;
+    Veggies[]veggies;
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clams;
 
-    void prepare(){
-        System.out.println("Preparing "+name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.out.println("Adding toppgins:");
-        toppings.forEach(System.out::println);
-    };
+    abstract void prepare();
+
     void bake(){
         System.out.println("Baking for 25 minutes at 350");
     };
