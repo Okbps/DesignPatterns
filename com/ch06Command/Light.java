@@ -14,4 +14,8 @@ public class Light {
     public void off() {
         System.out.println(location + " light is off");
     }
+
+    public void dim(){
+        System.out.println(location + " light is dimmed");
+    }
 }
