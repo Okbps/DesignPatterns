@@ -18,7 +18,7 @@ public class RemoteLoader {
         Stereo stereo = new Stereo("Living Room");
         HotTub hottub = new HotTub();
 
-        LightOnCommand lightOn = new LightOnCommand(light);
+        LightDimCommand lightDim = new LightDimCommand(light);
         StereoOnCommand stereoOn = new StereoOnCommand(stereo);
         TvOnCommand tvOn = new TvOnCommand(tv);
         HotTubOnCommand hottubOn = new HotTubOnCommand(hottub);
@@ -27,7 +27,7 @@ public class RemoteLoader {
         TvOffCommand tvOff = new TvOffCommand(tv);
         HotTubOffCommand hottubOff = new HotTubOffCommand(hottub);
 
-        Command[] partyOn = { lightOn, stereoOn, tvOn, hottubOn};
+        Command[] partyOn = { lightDim, stereoOn, tvOn, hottubOn};
         Command[] partyOff = { lightOff, stereoOff, tvOff, hottubOff};
 
         MacroCommand partyOnMacro = new MacroCommand(partyOn);
@@ -54,7 +54,8 @@ public class RemoteLoader {
         System.out.println("------Get the party started------");
         remoteControl.buttonOnPressed(3);
         System.out.println("------Get the party finished------");
+        remoteControl.buttonOffPressed(3);
+        System.out.println("------Undo finish------");
         remoteControl.buttonUndoPressed();
-//        remoteControl.buttonOffPressed(3);
     }
 }
