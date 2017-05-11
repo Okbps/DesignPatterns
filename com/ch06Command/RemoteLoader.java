@@ -33,8 +33,8 @@ public class RemoteLoader {
         MacroCommand partyOnMacro = new MacroCommand(partyOn);
         MacroCommand partyOffMacro = new MacroCommand(partyOff);
 
-
 	    remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+//        remoteControl.setCommand(0, livingRoomLight::on, livingRoomLight::off);
 	    remoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
 	    remoteControl.setCommand(2, ceilingFanMedium, ceilingFanOff);
 	    remoteControl.setCommand(3, partyOnMacro, partyOffMacro);
@@ -42,11 +42,9 @@ public class RemoteLoader {
 	    remoteControl.buttonOnPressed(0);
 	    remoteControl.buttonOffPressed(0);
         remoteControl.buttonUndoPressed();
-
 	    remoteControl.buttonOnPressed(1);
 	    remoteControl.buttonOffPressed(1);
         remoteControl.buttonUndoPressed();
-
 	    remoteControl.buttonOnPressed(2);
 	    remoteControl.buttonOffPressed(2);
         remoteControl.buttonUndoPressed();
