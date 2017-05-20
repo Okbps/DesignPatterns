@@ -6,12 +6,12 @@ import java.util.Iterator;
  * Created by Aspire on 19.05.2017.
  */
 public class Waitress {
-    Menu dMenu;
-    Menu phMenu;
+    Menu dMenu, phMenu, cMenu;
 
-    public Waitress(Menu dMenu, Menu phMenu) {
+    public Waitress(Menu dMenu, Menu phMenu, Menu cMenu) {
         this.dMenu = dMenu;
         this.phMenu = phMenu;
+        this.cMenu = cMenu;
     }
 
     public void printMenu(){
@@ -20,6 +20,9 @@ public class Waitress {
 
         System.out.println("\n===PANCAKE MENU===\n");
         printIterator(phMenu.createIterator());
+
+        System.out.println("\n===CAFE MENU===\n");
+        printIterator(cMenu.createIterator());
     }
 
     public void printIterator(Iterator<MenuItem> iterator){

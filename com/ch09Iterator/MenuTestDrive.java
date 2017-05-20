@@ -5,7 +5,11 @@ package com.ch09Iterator;
  */
 public class MenuTestDrive {
     public static void main(String[] args) {
-        Waitress waitress = new Waitress(new DinerMenu(), new PancakeHouseMenu());
+        Waitress waitress = new Waitress(
+                new DinerMenu(),
+                new PancakeHouseMenu(),
+                new CafeMenu());
+
         waitress.printMenu();
     }
 }
