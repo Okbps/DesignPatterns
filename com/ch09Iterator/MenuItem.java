@@ -3,30 +3,44 @@ package com.ch09Iterator;
 /**
  * Created by Aspire on 19.05.2017.
  */
-public class MenuItem {
+public class MenuItem extends MenuComponent{
     String name, description;
-    boolean vegeterian;
+    boolean vegetarian;
     double price;
 
     public MenuItem(String name, String description, boolean vegeterian, double price) {
         this.name = name;
         this.description = description;
-        this.vegeterian = vegeterian;
+        this.vegetarian = vegeterian;
         this.price = price;
     }
 
+    @Override
+    public void print() {
+        System.out.print("  " + getName());
+        if (isVegetarian()) {
+            System.out.print("(v)");
+        }
+        System.out.println(", " + getPrice());
+        System.out.println("     -- " + getDescription());
+    }
+
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
 
-    public boolean isVegeterian() {
-        return vegeterian;
+    @Override
+    public boolean isVegetarian() {
+        return vegetarian;
     }
 
+    @Override
     public double getPrice() {
         return price;
     }

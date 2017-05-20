@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Created by Aspire on 20.05.2017.
  */
-public class CafeMenu implements Menu{
+public class CafeMenu implements MenuIterator {
     HashMap<String, MenuItem>items = new HashMap<>();
 
     public CafeMenu() {
