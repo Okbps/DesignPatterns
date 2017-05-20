@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Aspire on 19.05.2017.
  */
-public class PancakeHouseIterator implements Iterator{
+public class PancakeHouseIterator implements MyIterator {
     ArrayList<MenuItem> items;
     int position;
 

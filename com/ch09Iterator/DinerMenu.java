@@ -1,9 +1,11 @@
 package com.ch09Iterator;
 
+import java.util.Iterator;
+
 /**
  * Created by Aspire on 19.05.2017.
  */
-public class DinerMenu {
+public class DinerMenu implements Menu{
     static final int MAX_ITMES = 6;
     int numberOfItems = 0;
     MenuItem[]menuItems;

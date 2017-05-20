@@ -1,11 +1,12 @@
 package com.ch09Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Aspire on 19.05.2017.
  */
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu{
     ArrayList<MenuItem>menuItems;
 
     public PancakeHouseMenu() {
@@ -36,7 +37,8 @@ public class PancakeHouseMenu {
         menuItems.add(new MenuItem(name, description, vegeterian, price));
     }
 
-    public Iterator createIterator() {
-        return new PancakeHouseIterator(menuItems);
+    @Override
+    public Iterator<MenuItem> createIterator() {
+        return menuItems.iterator();
     }
 }

@@ -1,13 +1,15 @@
 package com.ch09Iterator;
 
+import java.util.Iterator;
+
 /**
  * Created by Aspire on 19.05.2017.
  */
 public class Waitress {
-    DinerMenu dMenu;
-    PancakeHouseMenu phMenu;
+    Menu dMenu;
+    Menu phMenu;
 
-    public Waitress(DinerMenu dMenu, PancakeHouseMenu phMenu) {
+    public Waitress(Menu dMenu, Menu phMenu) {
         this.dMenu = dMenu;
         this.phMenu = phMenu;
     }
@@ -20,7 +22,7 @@ public class Waitress {
         printIterator(phMenu.createIterator());
     }
 
-    public void printIterator(Iterator iterator){
+    public void printIterator(Iterator<MenuItem> iterator){
         while(iterator.hasNext()){
             MenuItem item = (MenuItem) iterator.next();
 
