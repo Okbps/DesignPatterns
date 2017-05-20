@@ -1,5 +1,7 @@
 package com.ch09Iterator;
 
+import java.util.Iterator;
+
 /**
  * Created by Aspire on 19.05.2017.
  */
@@ -23,6 +25,11 @@ public class MenuItem extends MenuComponent{
         }
         System.out.println(", " + getPrice());
         System.out.println("     -- " + getDescription());
+    }
+
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new NullIterator();
     }
 
     @Override

@@ -1,9 +1,15 @@
 package com.ch09Iterator;
 
+import java.util.Iterator;
+
 /**
  * Created by Aspire on 20.05.2017.
  */
 public abstract class MenuComponent {
+    Iterator<MenuComponent>it = null;
+
+    public abstract Iterator<MenuComponent>createIterator();
+
     public double getPrice(){
         throw new UnsupportedOperationException();
     }

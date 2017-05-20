@@ -25,6 +25,14 @@ public class Menu extends MenuComponent{
     }
 
     @Override
+    public Iterator<MenuComponent> createIterator() {
+        if(it==null){
+            it = new CompositeIterator(list.iterator());
+        }
+        return it;
+    }
+
+    @Override
     public String getDescription() {
         return description;
     }

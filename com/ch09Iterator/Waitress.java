@@ -15,4 +15,21 @@ public class Waitress {
     public void printMenu(){
         menu.print();
     }
+
+    public void printVegeterianMenu(){
+        Iterator<MenuComponent>iterator = menu.createIterator();
+        System.out.println("======VEGETERIAN MENU======");
+
+        while (iterator.hasNext()){
+            MenuComponent component = iterator.next();
+
+            try {
+                if (component.isVegetarian()) {
+                    component.print();
+                }
+            }catch (UnsupportedOperationException ignored){
+
+            }
+        }
+    }
 }
