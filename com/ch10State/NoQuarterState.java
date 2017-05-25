@@ -30,4 +30,8 @@ public class NoQuarterState implements State{
     public void turnCrank() {
         System.out.println("You turned but there's no quarter");
     }
+
+    public String toString() {
+        return "waiting for quarter";
+    }
 }

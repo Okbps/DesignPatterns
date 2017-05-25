@@ -8,6 +8,7 @@ public class GumballMachine {
     final State HAS_QUARTER;
     final State SOLD_OUT;
     final State SOLD;
+    final State WINNER;
 
     State state;
     int count = 0;
@@ -17,6 +18,7 @@ public class GumballMachine {
         HAS_QUARTER = new HasQuarterState(this);
         SOLD_OUT = new SoldOutState(this);
         SOLD = new SoldState(this);
+        WINNER = new WinnerState(this);
         state = SOLD_OUT;
 
         this.count = count;
@@ -45,6 +47,10 @@ public class GumballMachine {
         return SOLD;
     }
 
+    public State getWinner() {
+        return WINNER;
+    }
+
     public void insertQuarter(){
         state.insertQuarter();
     }
@@ -70,5 +76,18 @@ public class GumballMachine {
 
     public int getCount() {
         return count;
+    }
+
+    public String toString() {
+        StringBuffer result = new StringBuffer();
+        result.append("\nMighty Gumball, Inc.");
+        result.append("\nJava-enabled Standing Gumball Model #2004");
+        result.append("\nInventory: " + count + " gumball");
+        if (count != 1) {
+            result.append("s");
+        }
+        result.append("\n");
+        result.append("Machine is " + state + "\n");
+        return result.toString();
     }
 }

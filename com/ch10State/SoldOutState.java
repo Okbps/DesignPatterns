@@ -29,4 +29,8 @@ public class SoldOutState implements State{
     public void turnCrank() {
         System.out.println("You turned, but there are no gumballs");
     }
+
+    public String toString() {
+        return "sold out";
+    }
 }
