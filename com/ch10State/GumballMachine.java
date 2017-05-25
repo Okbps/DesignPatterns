@@ -41,7 +41,7 @@ public class GumballMachine {
         return SOLD_OUT;
     }
 
-    public State getSOLD() {
+    public State getSold() {
         return SOLD;
     }
 
@@ -66,5 +66,9 @@ public class GumballMachine {
         if(count>0){
             count--;
         }
+    }
+
+    public int getCount() {
+        return count;
     }
 }
