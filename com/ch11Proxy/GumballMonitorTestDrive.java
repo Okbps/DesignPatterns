@@ -1,11 +1,29 @@
-package com.ch10State;
+package com.ch11Proxy;
+
+import com.ch10State.GumballMachine;
 
 /**
- * Created by Aspire on 24.05.2017.
+ * Created by Aspire on 27.05.2017.
  */
-public class GumballMachineTestDrive {
+public class GumballMonitorTestDrive {
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine("Yolk, Kyiv", 10);
+        int count = 0;
+
+        if (args.length < 2) {
+            System.out.println("GumballMachine <name> <inventory>");
+            System.exit(1);
+        }
+
+        try {
+            count = Integer.parseInt(args[1]);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        GumballMachine gumballMachine = new GumballMachine(args[0], count);
+
+        GumballMonitor monitor = new GumballMonitor(gumballMachine);
+
 
         System.out.println(gumballMachine);
 
@@ -43,5 +61,7 @@ public class GumballMachineTestDrive {
         gumballMachine.turnCrank();
 
         System.out.println(gumballMachine);
+
+        monitor.report();
     }
 }
