@@ -2,66 +2,39 @@ package com.ch11Proxy;
 
 import com.ch10State.GumballMachine;
 
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+
 /**
  * Created by Aspire on 27.05.2017.
  */
 public class GumballMonitorTestDrive {
     public static void main(String[] args) {
-        int count = 0;
+        String[] location = {
+                "rmi://santafe.mightygumball.com/gumballmachine",
+                "rmi://boulder.mightygumball.com/gumballmachine",
+                "rmi://seattle.mightygumball.com/gumballmachine"
+        };
 
-        if (args.length < 2) {
-            System.out.println("GumballMachine <name> <inventory>");
-            System.exit(1);
+        if (args.length >= 0){
+            location = new String[1];
+            location[0] = "rmi://" + args[0] + "/gumballmachine";
         }
 
-        try {
-            count = Integer.parseInt(args[1]);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
+        GumballMonitor[] monitor = new GumballMonitor[location.length];
+
+        for (int i=0;i < location.length; i++) {
+            try {
+                GumballMachineRemote machine = (GumballMachineRemote) Naming.lookup(location[i]);
+                monitor[i] = new GumballMonitor(machine);
+                System.out.println(monitor[i]);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        GumballMachine gumballMachine = new GumballMachine(args[0], count);
 
-        GumballMonitor monitor = new GumballMonitor(gumballMachine);
-
-
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
-
-        monitor.report();
+        for(int i=0; i < monitor.length; i++) {
+            monitor[i].report();
+        }
     }
 }

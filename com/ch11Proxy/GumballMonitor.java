@@ -2,19 +2,25 @@ package com.ch11Proxy;
 
 import com.ch10State.GumballMachine;
 
+import java.rmi.RemoteException;
+
 /**
  * Created by Aspire on 27.05.2017.
  */
 public class GumballMonitor {
-    GumballMachine machine;
+    GumballMachineRemote machine;
 
-    public GumballMonitor(GumballMachine machine) {
+    public GumballMonitor(GumballMachineRemote machine) {
         this.machine = machine;
     }
 
-    public void report(){
-        System.out.println("Gumball machine: " + machine.getLocation());
-        System.out.println("Current invenroty: " + machine.getCount() + " gumballs");
-        System.out.println("Current state: " + machine.getState());
+    public void report() {
+        try {
+            System.out.println("Gumball Machine: " + machine.getLocation());
+            System.out.println("Current inventory: " + machine.getCount() + " gumballs");
+            System.out.println("Current state: " + machine.getState());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }

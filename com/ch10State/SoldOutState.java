@@ -4,7 +4,8 @@ package com.ch10State;
  * Created by Aspire on 24.05.2017.
  */
 public class SoldOutState implements State{
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 5L;
+    transient GumballMachine gumballMachine;
 
     public SoldOutState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

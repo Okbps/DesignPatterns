@@ -6,7 +6,8 @@ import java.util.Random;
  * Created by Aspire on 24.05.2017.
  */
 public class HasQuarterState implements State{
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 3L;
+    transient GumballMachine gumballMachine;
     Random randomWinner = new Random(System.currentTimeMillis());
 
     public HasQuarterState(GumballMachine gumballMachine) {

@@ -1,9 +1,15 @@
 package com.ch10State;
 
+import com.ch11Proxy.GumballMachineRemote;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 /**
  * Created by Aspire on 24.05.2017.
  */
-public class GumballMachine {
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote{
+    private static final long serialVersionUID = 7;
     final State NO_QUARTER;
     final State HAS_QUARTER;
     final State SOLD_OUT;
@@ -14,7 +20,8 @@ public class GumballMachine {
     State state;
     int count = 0;
 
-    public GumballMachine(String location, int count) {
+    public GumballMachine(String location, int count) throws RemoteException {
+        super();
         NO_QUARTER = new NoQuarterState(this);
         HAS_QUARTER = new HasQuarterState(this);
         SOLD_OUT = new SoldOutState(this);

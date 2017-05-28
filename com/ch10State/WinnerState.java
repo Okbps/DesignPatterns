@@ -4,7 +4,8 @@ package com.ch10State;
  * Created by Aspire on 24.05.2017.
  */
 public class WinnerState implements State{
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 6L;
+    transient GumballMachine gumballMachine;
 
     public WinnerState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

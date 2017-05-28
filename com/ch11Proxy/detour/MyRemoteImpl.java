@@ -1,5 +1,6 @@
 package com.ch11Proxy.detour;
 
+import java.io.Serializable;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

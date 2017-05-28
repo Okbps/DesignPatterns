@@ -4,7 +4,8 @@ package com.ch10State;
  * Created by Aspire on 24.05.2017.
  */
 public class NoQuarterState implements State{
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 2L;
+    transient GumballMachine gumballMachine;
 
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
