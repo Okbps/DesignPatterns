@@ -1,6 +1,4 @@
-package com.ch11Proxy;
-
-import com.ch10State.GumballMachine;
+package com.ch11Proxy.gumball;
 
 import java.rmi.RemoteException;
 

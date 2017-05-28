@@ -1,6 +1,6 @@
 package com.ch10State;
 
-import com.ch11Proxy.GumballMachineRemote;
+import com.ch11Proxy.gumball.GumballMachineRemote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

@@ -1,4 +1,4 @@
-package com.ch11Proxy;
+package com.ch11Proxy.gumball;
 
 import com.ch10State.State;
 

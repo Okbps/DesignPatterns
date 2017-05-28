@@ -1,9 +1,6 @@
-package com.ch11Proxy;
-
-import com.ch10State.GumballMachine;
+package com.ch11Proxy.gumball;
 
 import java.rmi.Naming;
-import java.rmi.RemoteException;
 
 /**
  * Created by Aspire on 27.05.2017.
