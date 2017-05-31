@@ -1,18 +1,18 @@
-package com.ch12Compound;
+package com.ch12Compound.simuduck;
 
 /**
  * Created by Aspire on 29.05.2017.
  */
-public class RedheadDuck implements Quackable{
+public class RubberDuck implements Quackable{
     Observable observable;
 
-    public RedheadDuck() {
+    public RubberDuck() {
         observable = new Observable(this);
     }
 
     @Override
     public void quack() {
-        System.out.println("Quack");
+        System.out.println("Squeak");
         observable.notifyObservers();
     }
 

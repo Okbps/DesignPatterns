@@ -1,20 +1,19 @@
-package com.ch12Compound;
+package com.ch12Compound.simuduck;
 
 /**
  * Created by Aspire on 29.05.2017.
  */
-public class GooseAdapter implements Quackable{
+public class RedheadDuck implements Quackable{
     Observable observable;
-    Goose goose;
 
-    public GooseAdapter(Goose goose) {
+    public RedheadDuck() {
         observable = new Observable(this);
-        this.goose = goose;
     }
 
     @Override
     public void quack() {
-        goose.honk();
+        System.out.println("Quack");
+        observable.notifyObservers();
     }
 
     @Override

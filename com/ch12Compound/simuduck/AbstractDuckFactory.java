@@ -1,4 +1,4 @@
-package com.ch12Compound;
+package com.ch12Compound.simuduck;
 
 /**
  * Created by Aspire on 29.05.2017.

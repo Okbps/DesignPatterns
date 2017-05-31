@@ -1,4 +1,4 @@
-package com.ch12Compound;
+package com.ch12Compound.simuduck;
 
 import java.util.ArrayList;
 import java.util.Iterator;
