@@ -21,9 +21,6 @@ public class DJViewServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.sendRedirect("/djview.jsp");
-//        RequestDispatcher dispatcher = req.getRequestDispatcher("/djview.jsp");
-//        dispatcher.forward(req, resp);
     }
 
     @Override
